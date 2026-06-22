@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #070a19; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes gridMove { from { background-position: 0 0; } to { background-position: 60px 60px; } }
+@keyframes blob1 { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.15); } }
+@keyframes blob2 { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.1); } }
+
+.nav-links { display: flex; align-items: center; gap: 28px; }
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(7, 10, 25, 0.75);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    z-index: 998;
+  }
+  .nav-links.flex { display: flex !important; }
+  .burger { display: block !important; }
+}
+
+/* Glass cards lift and brighten slightly on hover/focus */
+.service-card:hover,
+.team-card:hover {
+  border-color: rgba(108, 99, 255, 0.5) !important;
+  transform: translateY(-4px) !important;
+  background: rgba(18, 24, 56, 0.6) !important;
+}
+
+input:focus, textarea:focus {
+  border-color: #6c63ff66 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
