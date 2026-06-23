@@ -3,6 +3,7 @@
 // "above" the page (nav on scroll, cards, badges, pills) so they read as
 // floating panels over the animated grid/blob background instead of flat
 // opaque boxes.
+
 const glassPanel = {
   background: "rgba(18, 24, 56, 0.45)",
   backdropFilter: "blur(18px) saturate(160%)",

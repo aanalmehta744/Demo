@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+
 import "./index.css";
 
 import { Loader } from "./components/Loader";
@@ -11,22 +13,38 @@ import { Team } from "./components/Team";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { styles } from "./styles/styles";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 2200);
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    setTimeout(() => setLoaded(true), 2500);
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
-    return () => { clearTimeout(timer); window.removeEventListener("scroll", onScroll); };
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
+  if (!loaded) return <Loader />;
+
   return (
-    <div style={styles.app}>
-      <Loader done={loaded} />
+    <div className="app">
       <Navbar scrolled={scrolled} />
       <Hero />
       <Services />

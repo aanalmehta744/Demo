@@ -43,3 +43,21 @@ input:focus, textarea:focus {
   border-color: #6c63ff66 !important;
   background: rgba(255, 255, 255, 0.08) !important;
 }
+
+
+
+
+
+body {
+  background: #060710;
+  color: white;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}

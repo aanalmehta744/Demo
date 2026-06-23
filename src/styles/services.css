@@ -1,0 +1,72 @@
+/* ===== SERVICE CARD BASE ===== */
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* hover lift */
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(108, 99, 255, 0.4);
+  box-shadow: 0 10px 40px rgba(108, 99, 255, 0.15);
+}
+
+/* glow sweep effect */
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(108, 99, 255, 0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card:hover .cardGlow {
+  opacity: 1;
+}
+
+/* icon polish */
+.service-card span:first-child {
+  font-size: 28px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+/* title */
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* description */
+.service-card p {
+  color: #a9a9a9;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* arrow */
+.service-card span:last-child {
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  opacity: 0.4;
+  transition: 0.3s ease;
+}
+
+.service-card:hover span:last-child {
+  opacity: 1;
+  transform: translateX(4px);
+}

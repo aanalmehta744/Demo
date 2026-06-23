@@ -1,0 +1,61 @@
+:root {
+  --bg: #060710;
+  --primary: #4f46e5;
+  --secondary: #7c3aed;
+  --text: #e5e7eb;
+  --glass: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.1);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* GLASS SYSTEM */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79,70,229,0.4);
+}
+
+/* BUTTON GLOBAL */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+.btn-glass {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  padding: 12px 24px;
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-glass:hover {
+  transform: scale(1.05);
+}
